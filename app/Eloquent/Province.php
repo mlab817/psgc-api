@@ -2,10 +2,13 @@
 
 namespace App\Eloquent;
 
+use Grimzy\LaravelMysqlSpatial\Eloquent\SpatialTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Province extends Model
 {
+    use SpatialTrait;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -19,6 +22,8 @@ class Province extends Model
      * @var array
      */
     protected $hidden = ['id', 'region_id'];
+
+    protected $spatialFields = ['geometry','centroid'];
 
     /**
      * Get the route key for the model.

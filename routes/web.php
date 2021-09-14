@@ -10,3 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/export', function () {
+    return \Maatwebsite\Excel\Facades\Excel::download(new \App\Exports\BarangaysExport, 'barangays.csv');
+});

@@ -2,10 +2,13 @@
 
 namespace App\Eloquent;
 
+use Grimzy\LaravelMysqlSpatial\Eloquent\SpatialTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class SubMunicipality extends Model
 {
+    use SpatialTrait;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -19,6 +22,8 @@ class SubMunicipality extends Model
      * @var array
      */
     protected $hidden = ['id', 'city_id'];
+
+    protected $spatialFields = ['geometry','centroid'];
 
     /**
      * Get the route key for the model.

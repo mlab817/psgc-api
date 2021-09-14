@@ -2,6 +2,7 @@
 
 namespace App\Eloquent;
 
+use Grimzy\LaravelMysqlSpatial\Eloquent\SpatialTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class City extends Model
 {
+    use SpatialTrait;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +25,8 @@ class City extends Model
      * @var array
      */
     protected $hidden = ['id', 'geographic_type', 'geographic_id'];
+
+    protected $spatialFields = ['geometry','centroid'];
 
     /**
      * Get the route key for the model.
