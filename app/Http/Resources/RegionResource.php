@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Grimzy\LaravelMysqlSpatial\Types\Geometry;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class RegionResource extends JsonResource
@@ -16,11 +17,14 @@ class RegionResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'code'       => $this->code,
-            'name'       => $this->name,
-            'population' => $this->population,
-            'provinces'  => ProvinceResource::collection($this->whenLoaded('provinces')),
-            'districts'  => DistrictResource::collection($this->whenLoaded('districts')),
+            'id'         => $this->id,
+            'properties' => [
+                'code'      => $this->code,
+                'name'      => $this->name,
+                'population'=> $this->population,
+            ],
+            'type'      => 'Feature',
+            'geometry'  => $this->geometry,
         ];
     }
 }

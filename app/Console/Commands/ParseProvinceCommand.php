@@ -33,7 +33,7 @@ class ParseProvinceCommand extends Command
     public function handle()
     {
         try {
-            $shapeFile = new ShapefileReader(database_path('Provinces/provinces_psgc_geom.shp'));
+            $shapeFile = new ShapefileReader(database_path('Provinces/provinces with geom simplified/provinces_psgc_geom.shp'));
 
             $bar = $this->output->createProgressBar($shapeFile->getTotRecords());
 
@@ -41,11 +41,10 @@ class ParseProvinceCommand extends Command
                 $province = Province::where('code', $geometry->getData('CODE'))->first();
                 $geom = MultiPolygon::fromWKT($geometry->getWKT());
 
-                if (! $province->geometry) {
-                    $province->update([
-                        'geometry' => $geom
-                    ]);
-                }
+                $province->update([
+                    'geometry' => $geom
+                ]);
+
                 $this->info('Inserted geometry to province: ', $province->name);
                 $bar->advance();
             }

@@ -16,15 +16,16 @@ class ProvinceController extends Controller
      */
     public function index(Request $request)
     {
-        $perPage = $request->per_page ?? self::ITEMS_PER_PAGE;
+        $region = $request->query('region');
 
-        $provinces = QueryBuilder::for(Province::class)->allowedIncludes('cities', 'municipalities');
+        $provinces = Province::query();
 
-        if ($perPage === 'all') {
-            return ProvinceResource::collection($provinces->get());
+        if ($region) {
+            $provinces->where('region_id', $region);
         }
 
-        return ProvinceResource::collection($provinces->paginate($perPage));
+        return ProvinceResource::collection($provinces->get());
+
     }
 
     /**

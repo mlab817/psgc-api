@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9be4bb04-f62a-42de-8503-23622b22198d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ParsePSGCFileCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ParsePSGCFileCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Eloquent/Barangay.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Eloquent/Barangay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Eloquent/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Eloquent/City.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Eloquent/District.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Eloquent/District.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Eloquent/Municipality.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Eloquent/Municipality.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Eloquent/Province.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Eloquent/Province.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Eloquent/Region.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Eloquent/Region.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Eloquent/SubMunicipality.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Eloquent/SubMunicipality.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ParseProvinceCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ParseProvinceCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ParseRegionCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ParseRegionCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProvinceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProvinceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ProvinceResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProvinceResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/RegionResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RegionResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,10 +180,25 @@
       <workItem from="1631598146074" duration="3603000" />
       <workItem from="1631611256981" duration="1660000" />
       <workItem from="1631665537675" duration="1829000" />
+      <workItem from="1631671839599" duration="6714000" />
+      <workItem from="1631709290105" duration="4295000" />
+      <workItem from="1631774741732" duration="776000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

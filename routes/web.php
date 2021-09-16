@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/export', function () {
     return \Maatwebsite\Excel\Facades\Excel::download(new \App\Exports\BarangaysExport, 'barangays.csv');
 });
+
+Route::view('/','index');

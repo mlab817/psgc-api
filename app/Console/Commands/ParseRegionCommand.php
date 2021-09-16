@@ -35,7 +35,7 @@ class ParseRegionCommand extends Command
     {
         $this->parseGeometry();
 
-        $this->parseCentroid();
+//        $this->parseCentroid();
 
         return 0;
     }
@@ -48,7 +48,7 @@ class ParseRegionCommand extends Command
     public function parseGeometry()
     {
         try {
-            $shapeFile = new ShapefileReader(database_path('Regions/regions geom.shp'));
+            $shapeFile = new ShapefileReader(database_path('Regions/regions geom simplified/regions geom.shp'));
 
             $bar = $this->output->createProgressBar($shapeFile->getTotRecords());
 
@@ -56,11 +56,10 @@ class ParseRegionCommand extends Command
                 $region = $this->getRegion((string) $geometry->getData('CODE'));
                 $geom = MultiPolygon::fromWKT($geometry->getWKT());
 
-                if (! $region->geometry) {
-                    $region->update([
-                        'geometry' => $geom
-                    ]);
-                }
+                $region->update([
+                    'geometry' => $geom
+                ]);
+
                 $this->info('Inserted geometry to Region: ', $region->name);
                 $bar->advance();
             }
