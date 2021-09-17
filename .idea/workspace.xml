@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9be4bb04-f62a-42de-8503-23622b22198d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ParseProvinceCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ParseProvinceCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ParseRegionCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ParseRegionCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProvinceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProvinceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ProvinceResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProvinceResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/RegionResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RegionResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +149,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nafmip-ip" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -183,6 +176,8 @@
       <workItem from="1631671839599" duration="6714000" />
       <workItem from="1631709290105" duration="4295000" />
       <workItem from="1631774741732" duration="776000" />
+      <workItem from="1631838875593" duration="138000" />
+      <workItem from="1631858259054" duration="231000" />
     </task>
     <servers />
   </component>
