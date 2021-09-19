@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Eloquent\Province;
+use App\Http\Resources\ProvinceCollection;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\ProvinceResource;
@@ -24,7 +25,7 @@ class ProvinceController extends Controller
             $provinces->where('region_id', $region);
         }
 
-        return ProvinceResource::collection($provinces->get());
+        return new ProvinceCollection($provinces->get());
 
     }
 
