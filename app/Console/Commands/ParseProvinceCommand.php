@@ -6,6 +6,7 @@ use App\Eloquent\Barangay;
 use App\Eloquent\Province;
 use Grimzy\LaravelMysqlSpatial\Types\MultiPolygon;
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Shapefile\ShapefileException;
 use Shapefile\ShapefileReader;
 
@@ -39,13 +40,17 @@ class ParseProvinceCommand extends Command
 
             while ($geometry = $shapeFile->fetchRecord()) {
                 $province = Province::where('code', $geometry->getData('CODE'))->first();
+
                 $geom = MultiPolygon::fromWKT($geometry->getWKT());
 
-                $province->update([
-                    'geometry' => $geom
-                ]);
-
-                $this->info('Inserted geometry to province: ', $province->name);
+                if ($province) {
+                    $province->update([
+                        'geometry' => $geom
+                    ]);
+                    $this->info('Inserted geometry to province: ', $province->name);
+                } else {
+                    $this->info('Missing province: ', $geometry->getData('CODE'));
+                }
                 $bar->advance();
             }
 
@@ -55,6 +60,8 @@ class ParseProvinceCommand extends Command
             echo "Error Type: " . $e->getErrorType()
                 . "\nMessage: " . $e->getMessage()
                 . "\nDetails: " . $e->getDetails();
+        } catch (ModelNotFoundException $e) {
+            echo "Message: " . $e->getMessage();
         }
 
         return 0;
