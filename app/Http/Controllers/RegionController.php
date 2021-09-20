@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Eloquent\Region;
+use App\Http\Resources\RegionCollection;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\RegionResource;
@@ -16,15 +17,7 @@ class RegionController extends Controller
      */
     public function index(Request $request)
     {
-        $perPage = $request->per_page ?? self::ITEMS_PER_PAGE;
-
-        $regions = QueryBuilder::for(Region::class)->allowedIncludes('provinces', 'districts');
-
-        if ($perPage === 'all') {
-            return RegionResource::collection($regions->get());
-        }
-
-        return RegionResource::collection($regions->paginate($perPage));
+        return new RegionCollection(Region::all());
     }
 
     /**

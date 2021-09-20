@@ -17,7 +17,7 @@ class AddSpatialFieldsToTables extends Migration
 
         foreach ($tables as $tableName) {
             Schema::table($tableName, function (Blueprint $table) {
-                $table->multiPolygon('geometry')->nullable();
+                $table->geometry('geometry')->nullable();
                 $table->point('centroid')->nullable();
             });
         }

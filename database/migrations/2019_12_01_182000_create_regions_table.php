@@ -17,7 +17,7 @@ class CreateRegionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('code')->unique();
             $table->string('name');
-            $table->bigInteger('population');
+            $table->bigInteger('population')->nullable();
             $table->timestamps();
         });
     }

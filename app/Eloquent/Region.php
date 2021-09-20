@@ -16,7 +16,10 @@ class Region extends Model
      */
     protected $fillable = ['code', 'name', 'population', 'geometry', 'centroid'];
 
-    protected $spatialFields = ['geometry','centroid'];
+    protected $spatialFields = [
+        'geometry',
+        'centroid'
+    ];
 
     /**
      * Get the route key for the model.
